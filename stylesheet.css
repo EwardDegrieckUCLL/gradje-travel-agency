@@ -1,17 +1,105 @@
-.language-img {
-    max-width: 100px;
+:root {
+    --color-primary: rgb(0,0,0);
+    --color-secondary: rgb(199, 142, 9);
+    --color-tertiary: rgb(246, 246, 246);
 }
 
-.black-border {
+* {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* default elements */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    background-color: var(--color-tertiary);
+    margin: 0.5em;
+    border-radius: 1em;
+}
+
+main > * {
+    margin: 0.5em 2em;
+}
+
+.black-border-big {
+    filter: drop-shadow(4px 0 0 #000) 
+            drop-shadow(0 4px 0 #000)
+            drop-shadow(-4px 0 0 #000) 
+            drop-shadow(0 -4px 0 #000)
+}
+
+.black-border-small {
     filter: drop-shadow(1.5px 0 0 #000) 
             drop-shadow(0 1.5px 0 #000)
             drop-shadow(-1.5px 0 0 #000) 
             drop-shadow(0 -1.5px 0 #000)
 }
 
-.white-border {
-    filter: drop-shadow(3px 0 0 #fff) 
-            drop-shadow(0 3px 0 #fff)
-            drop-shadow(-3px 0 0 #fff) 
-            drop-shadow(0 -3px 0 #fff)
+.white-border-small {
+    filter: drop-shadow(1.5px 0 0 #fff) 
+            drop-shadow(0 1.5px 0 #fff)
+            drop-shadow(-1.5px 0 0 #fff) 
+            drop-shadow(0 -1.5px 0 #fff)
+}
+
+.width-65 {
+    max-width: 65px;
+}
+
+.width-250 {
+    max-width: 250px;
+}
+
+/* typography */
+
+/* header and navigation */
+header {
+    background-color: #000;
+    color: #fff;
+
+    justify-content: space-between;
+    font-size: 1.2rem;
+    border-bottom: 4px solid var(--color-secondary);
+    padding: 1em;
+}
+
+header, .website-logo {
+    display: flex;
+    align-items: center;
+}
+
+.website-logo {
+    gap: 1em;
+    padding-left: 1em;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2em;
+    align-items: baseline;
+}
+
+.current-page {
+    font-weight: 800;
+    font-size: 1.25em;
+    color: var(--color-secondary);
+}
+
+/* footer */
+footer {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.25em;
+    margin: 1em;
 }
