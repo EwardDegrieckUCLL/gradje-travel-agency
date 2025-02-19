@@ -2,6 +2,8 @@
     --color-primary: rgb(0,0,0);
     --color-secondary: rgb(199, 142, 9);
     --color-tertiary: rgb(246, 246, 246);
+
+    --img-shadow: 0.08em 0.08em 0.8em rgb(104, 104, 104); 
 }
 
 * {
@@ -13,6 +15,7 @@
 /* default elements */
 img {
     display: block;
+    width: 300px;
     max-width: 100%;
     height: auto;
 }
@@ -20,6 +23,10 @@ img {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+main a:hover, footer a:hover {
+    border-bottom: 2px solid;
 }
 
 main {
@@ -75,6 +82,9 @@ main > * {
 }
 
 /* typography */
+h2 {
+    padding: 0.5em 0;
+}
 
 /* header and navigation */
 header {
@@ -84,7 +94,7 @@ header {
     justify-content: space-between;
     font-size: 1.2rem;
     border-bottom: 0.5px solid rgb(100,100,100);
-    padding: 0 0.7em 0 2em;
+    padding: 0.5em 0.7em 0 2em;
 }
 
 header, .website-logo {
@@ -96,7 +106,29 @@ header, .website-logo {
     gap: 1em;
 }
 
-@media (min-width: 40rem){
+.website-logo, .language-option {
+    margin-bottom: 0.35rem;
+}
+
+nav li:hover {
+    color: var(--color-secondary);
+    transition: 0.5s ease;
+}
+
+nav a {
+    display: inline-block;
+}
+
+.current-page, nav li:hover {
+    color: var(--color-secondary);
+    border-bottom: 3px solid var(--color-secondary);
+}
+
+.current-page {
+    font-weight: 800;
+}
+
+@media (min-width: 40rem) {
     nav ul {
         display: flex;
         list-style: none;
@@ -105,35 +137,18 @@ header, .website-logo {
         padding-top: 1.25em;
     }
 
-    nav a {
-        display: inline-block;
-    }
-
     .current-page, nav li:hover {
-        color: var(--color-secondary);
         box-shadow: 0 1px var(--color-secondary);
-        border-bottom: 5px solid var(--color-secondary);
     }
 
     .current-page {
-        font-weight: 800;
         padding-bottom: 0.6em;
         font-size: 1.2em;
     }
 
     nav a:hover {
         transition: 0.4s ease;
-        opacity: 0.85;
-        padding-bottom: 0.85em;
-        font-size: 1em;
-    }
-
-    nav li:hover {
-        opacity: 0.85;
-    }
-
-    .current-page:hover {
-        opacity: 1;
+        padding-bottom: 0.82em;
     }
 }
 
@@ -172,7 +187,6 @@ a img:hover {
         grid-row: 1;
         grid-column: 1/3;
         justify-self: center;
-        margin-bottom: 1rem;
     }
 
     nav {
@@ -184,7 +198,6 @@ a img:hover {
         grid-row: 2;
         grid-column: 2;
         justify-self: center;
-        margin: 0.5em 0 0.75em 0;
     }
 
     nav ul {
@@ -194,10 +207,10 @@ a img:hover {
         top: 1;
         left: 100vw;
         z-index: 1;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
         list-style: none;
-        align-items: center;
         gap: 1.5em;
         padding: 1.5em 0.5em;
         visibility: hidden;
@@ -205,34 +218,14 @@ a img:hover {
     }
 
     nav li {
-        border: 2px solid var(--color-tertiary);
-        border-radius: 0.3em;
-        text-align: center;
+        margin-left: 2em;
+        font-size: 1.1em;
     }
 
     nav a {
         display: block;
         margin: 0;
         padding: 0.25em;
-    }
-
-    nav li:hover {
-        border-color: var(--color-secondary);
-        color: var(--color-secondary);
-        opacity: 0.8;
-        border-width: 2.5px;
-        transition: 0.5s ease;
-    }
-
-    .current-page {
-        color: var(--color-secondary);
-        border-color: var(--color-secondary);
-        border-width: 2.5px;
-        font-weight: 800;
-    }
-
-    .current-page:hover {
-        opacity: 1;
     }
 
     .hamburger-menu {
@@ -264,7 +257,6 @@ a img:hover {
     }  
 
     .hamburger-menu:hover {
-        opacity: 0.8;
         cursor: pointer;
         transition: 0.5s ease;
     }
@@ -294,8 +286,34 @@ a img:hover {
     }
 }
 
+/* main */
+.flex-container {
+    display: flex;
+    gap: 4em;
+}
+
+main p {
+    max-width: 75ch;
+}
+
+main img {
+    border-radius: 0.5em;
+    box-shadow: var(--img-shadow);
+}
+
+main figure {
+    padding: 1.25em;
+}
+
+@media (width < 58rem) {
+    .flex-container {
+        flex-direction: column;
+    }
+}
+
 /* footer */
 footer {
+    color: #fff;
     text-align: center;
     font-weight: 600;
     font-size: 1.25em;
