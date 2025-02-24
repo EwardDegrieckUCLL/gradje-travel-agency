@@ -1,9 +1,28 @@
+@font-face {
+    font-family: 'GTA';
+    src: url('./fonts/pricedown\ bl.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Pricedown V2";
+    src: url("https://db.onlinewebfonts.com/t/a7600f3ef906b725df694b7e08952f06.eot");
+    src: url("https://db.onlinewebfonts.com/t/a7600f3ef906b725df694b7e08952f06.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/a7600f3ef906b725df694b7e08952f06.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/a7600f3ef906b725df694b7e08952f06.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/a7600f3ef906b725df694b7e08952f06.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/a7600f3ef906b725df694b7e08952f06.svg#Pricedown V2")format("svg");
+}
+
 :root {
     --color-primary: rgb(0,0,0);
     --color-secondary: rgb(199, 142, 9);
     --color-tertiary: rgb(246, 246, 246);
 
-    --img-shadow: 0.08em 0.08em 0.8em rgb(104, 104, 104); 
+    --img-shadow: 2.5px 2.5px 5px 1px rgb(121, 120, 120); 
+
+    --title-font: 'GTA', sans-serif;
 }
 
 * {
@@ -21,27 +40,34 @@ img {
 }
 
 a {
-    text-decoration: none;
     color: inherit;
 }
 
+header a {
+    text-decoration: none;
+}
+
 main a:hover, footer a:hover {
-    border-bottom: 2px solid;
+    text-decoration: none;
+    padding-bottom: 0.15em;
+    border-bottom: 3px solid;
 }
 
 main {
     background-color: var(--color-tertiary);
     margin: 0.5em;
     border-radius: 1em;
-}
-
-body {
-    
-    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main > * {
-    margin: 0.5em 2em;
+    margin: 1.5rem;
+}
+
+body {
+    background-color: var(--color-primary);
 }
 
 .black-border-big {
@@ -84,6 +110,9 @@ main > * {
 /* typography */
 h2 {
     padding: 0.5em 0;
+    font-family: var(--title-font);
+    font-weight: 100;
+    font-size: 2rem;
 }
 
 /* header and navigation */
@@ -149,6 +178,10 @@ nav a {
     nav a:hover {
         transition: 0.4s ease;
         padding-bottom: 0.82em;
+    }
+
+    .current-page a:hover {
+        padding-bottom: 0;
     }
 }
 
@@ -289,11 +322,15 @@ a img:hover {
 /* main */
 .flex-container {
     display: flex;
-    gap: 4em;
+    gap: 3.5em;
+}
+
+.flex-container figure {
+    align-self: center;
 }
 
 main p {
-    max-width: 75ch;
+    max-width: 65ch;
 }
 
 main img {
@@ -307,7 +344,15 @@ main figure {
 
 @media (width < 58rem) {
     .flex-container {
+        gap: 1.5em;
+    }
+
+    .img-right {
         flex-direction: column;
+    }
+
+    .img-left {
+        flex-direction: column-reverse;
     }
 }
 
