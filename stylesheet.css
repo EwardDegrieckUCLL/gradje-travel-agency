@@ -6,6 +6,16 @@
 }
 
 @font-face {
+    font-family: "Chalet-LondonNineteenSixty";
+    src: url("https://db.onlinewebfonts.com/t/8ae90d1880a9e9a51d7810be9fe6f49e.eot");
+    src: url("https://db.onlinewebfonts.com/t/8ae90d1880a9e9a51d7810be9fe6f49e.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/8ae90d1880a9e9a51d7810be9fe6f49e.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/8ae90d1880a9e9a51d7810be9fe6f49e.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/8ae90d1880a9e9a51d7810be9fe6f49e.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/8ae90d1880a9e9a51d7810be9fe6f49e.svg#Chalet-LondonNineteenSixty")format("svg");
+}
+
+@font-face {
     font-family: "Pricedown V2";
     src: url("https://db.onlinewebfonts.com/t/a7600f3ef906b725df694b7e08952f06.eot");
     src: url("https://db.onlinewebfonts.com/t/a7600f3ef906b725df694b7e08952f06.eot?#iefix")format("embedded-opentype"),
@@ -18,11 +28,12 @@
 :root {
     --color-primary: rgb(0,0,0);
     --color-secondary: rgb(199, 142, 9);
-    --color-tertiary: rgb(246, 246, 246);
+    --color-tertiary: rgb(239, 239, 239);
 
     --img-shadow: 2.5px 2.5px 5px 1px rgb(121, 120, 120); 
 
     --title-font: 'GTA', sans-serif;
+    --text-font: "Chalet-LondonNineteenSixty", sans-serif;
 }
 
 * {
@@ -115,6 +126,11 @@ h2 {
     font-size: 2rem;
 }
 
+p {
+    font-family: var(--text-font);
+    font-size: 1.15rem;
+}
+
 /* header and navigation */
 header {
     background-color: #000;
@@ -163,7 +179,7 @@ nav a {
         list-style: none;
         gap: 1.5em;
         align-items: baseline;
-        padding-top: 1.25em;
+        padding: 1.25em;
     }
 
     .current-page, nav li:hover {
