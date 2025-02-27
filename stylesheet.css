@@ -137,6 +137,11 @@ h2 {
     font-size: 2rem;
 }
 
+h3 {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
 p {
     font-family: var(--text-font);
     font-size: 1.15rem;
@@ -350,7 +355,11 @@ main figure {
 
 @media (width < 58rem) {
     .flex-container {
-        gap: 1.5em;
+        gap: 0.5em;
+    }
+
+    main section {
+        margin-bottom: 3rem;
     }
 
     .img-right {
@@ -360,6 +369,20 @@ main figure {
     .img-left {
         flex-direction: column-reverse;
     }
+}
+
+/* reizen */
+article.employee-info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5em;
+    margin: 2rem 0 4rem 0;
+}
+
+article.employee-info figure{
+    padding: 0;
+    max-width: 200px;
 }
 
 /* footer */
