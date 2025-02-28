@@ -359,15 +359,17 @@ main figure {
     }
 
     main section {
-        margin-bottom: 3rem;
+        margin-bottom: 1.5rem;
     }
 
     .img-right {
         flex-direction: column;
+        padding-bottom: 1rem;
     }
 
     .img-left {
         flex-direction: column-reverse;
+        padding-bottom: 1rem;
     }
 }
 
@@ -377,12 +379,20 @@ article.employee-info {
     flex-direction: row;
     align-items: flex-start;
     gap: 1.5em;
-    margin: 2rem 0 4rem 0;
+    margin: 2rem 0 3.5rem 0;
 }
 
 article.employee-info figure{
-    padding: 0;
-    max-width: 200px;
+    max-width: 250px;
+}
+
+@media (width < 900px) {
+    article.employee-info {
+        flex-direction: column;
+    }
+    article.employee-info>*:last-child {
+        margin: auto;
+    }
 }
 
 /* footer */
