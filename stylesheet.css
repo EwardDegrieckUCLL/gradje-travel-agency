@@ -147,10 +147,15 @@ h2 {
             drop-shadow(0 -2.75px 0 #000);
 }
 
+.japanese h2 {
+    color: #000;
+    filter: none;
+    font-weight: 600;
+}
+
 h3 {
     font-family: var(--text-font);
-    color: var(--color-gta-gold);
-    text-transform: u;
+    color: #fff;
     background-color: #000;
     font-size: 1.55rem;
     padding: 0.5rem;
@@ -418,8 +423,9 @@ article.employee-info figure{
 
 /* contact */
 table {
+    margin: 1rem;
     font-size: 1.25rem;
-    width: 100%;
+    width: 95%;
     border-collapse: collapse;
     margin-bottom: 2rem;
 }
@@ -432,8 +438,16 @@ td {
     padding: 0.2rem 0 0.4rem 0;
 }
 
-tr td:first-child {
-    max-width: 60px;
+@media (width > 58rem) {
+    tr td:first-child {
+        max-width: 70px;
+    }
+}
+
+@media (width <= 58rem) {
+    tr td:first-child {
+        min-width: 40px;
+    }
 }
 
 tr:last-child {
